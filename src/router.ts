@@ -1,5 +1,7 @@
+import errorHandleController from "./middlewares/errorHandler.js";
+
 import { Router } from "express";
-import errorHandleController from "./middlewares/errorHandler";
+import { paymentController } from "./controllers/paymentController.js";
 
 const router = Router();
 
@@ -8,5 +10,8 @@ router.get("/", function (res, req) {
     serverName: "test",
   });
 });
+
+router.post("/payment/create", errorHandleController(paymentController.create));
+router.post("/payment/verify", errorHandleController(paymentController.verify));
 
 export default router;
