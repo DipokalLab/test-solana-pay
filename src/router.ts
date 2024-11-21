@@ -12,6 +12,10 @@ router.get("/", function (res, req) {
 });
 
 router.post("/payment/create", errorHandleController(paymentController.create));
+router.post(
+  "/payment/process",
+  errorHandleController(paymentController.process)
+);
 router.post("/payment/verify", errorHandleController(paymentController.verify));
 
 export default router;
