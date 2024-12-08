@@ -3,7 +3,6 @@ import api from "./dist/router.js";
 import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
 import cors from "cors";
-import { Router } from "express";
 
 const app = express();
 app.set("trust proxy", 1);
